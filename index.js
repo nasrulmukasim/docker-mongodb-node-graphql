@@ -1,2 +1,2 @@
-const db = require('./loaders/db.js');
-const server = require('./loaders/graphql.js');
+const { db } = require('./loaders/db');
+const { app, server } = require('./loaders/graphql.js');
