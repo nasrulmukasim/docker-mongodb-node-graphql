@@ -12,9 +12,9 @@ const dbConfig = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   name: process.env.DB_NAME,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  authDB: process.env.DB_AUTHDB,
+  username: process.env.DB_APP_USERNAME,
+  password: process.env.DB_APP_PASSWORD,
+  authDB: process.env.DB_APP_AUTHDB,
 };
 
 module.exports = {

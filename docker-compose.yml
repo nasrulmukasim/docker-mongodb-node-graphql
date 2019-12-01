@@ -14,6 +14,7 @@ services:
       - .:/var/deploy/app
     command: npm run start
     depends_on:
+      
       - mongo
     restart: unless-stopped
 
@@ -22,12 +23,12 @@ services:
     image: mongo:latest
     environment:
       - MONGO_INITDB_DATABASE=${DB_NAME}
-      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
     ports:
       - "27017:27017"
     volumes:
-      # - ./mongo-init-scripts:/docker-entrypoint-initdb.d:ro
+      - ./mongo-init-scripts:/docker-entrypoint-initdb.d:ro
       - ./data/db:/data/db
     command: mongod --auth
     healthcheck:
