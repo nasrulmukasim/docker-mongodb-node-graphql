@@ -5,7 +5,7 @@ Node.js runs as in `nodemon` so it autoreloads on code changes without requiring
 
 ---
 ### Setup 
-##### 1. Install Node.js
+##### 1. Install Node.js [optional - do this only if you don't want to run in docker]
 Standard installation (Windows/macOS/Linux): https://nodejs.org/en/download/
 or
 Recommended installation via nvm (macOS/Linux) https://github.com/nvm-sh/nvm
