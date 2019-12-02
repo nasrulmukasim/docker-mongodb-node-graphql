@@ -9,7 +9,10 @@ start:
 stop:
 	@docker-compose down
 
-reset-all: reset-mongo-db remove-node-modules
+reset-all: reset-mongo-db remove-node-modules reset-git
+
+reset-git:
+  @git reset --hard
 
 reset-mongo-db:
 	@echo "Removing all mongodb data. This will require sudo privileges."
