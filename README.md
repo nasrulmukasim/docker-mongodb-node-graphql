@@ -52,7 +52,7 @@ Build the docker image and start all containers in background\
 make
 ```
 
-Start containers\
+Start containers
 ```
 make start
 ```
