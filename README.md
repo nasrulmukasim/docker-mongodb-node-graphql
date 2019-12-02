@@ -31,27 +31,39 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ##### 4. Clone this repo
-```git clone git@github.com:nasrulmukasim/docker-mongodb-node-graphql.git ```
+```
+git clone git@github.com:nasrulmukasim/docker-mongodb-node-graphql.git
+```
 
 ---
 ### Usage
 
-##### Set up environment variables
+#### Set up environment variables
 ```
 cp .env-sample .env
 ```
 Then edit the .env file to assign the environment variables
 
-##### Run via makefile
-Build the docker image and start all containers in background
-```make```
-Start containers
-``` make start```
-Stop and remove containers
-``` make stop```
+#### Run via makefile
+Build the docker image and start all containers in background\
+```
+make
+```
 
-##### or run directly in docker compose as a daemon
-```docker-compose up -d```
+Start containers\
+```
+make start
+```
+
+Stop and remove containers
+```
+make stop
+```
+
+#### or run directly in docker compose as a daemon
+```
+docker-compose up -d
+```
 
 ---
 
@@ -59,27 +71,38 @@ Stop and remove containers
 
 Create your own .js file in the `./mongo-init-scripts` folder
 
-E.g.
+*<sup>For example:</sup>*
 ```
-db.createUser({
-  user: appUser
-  pwd: 5ecurepa55w0rd!
-  roles: [
-    {
-      role: 'readWrite',
-      db: 'app'
-    }
-  ]
-});
+db.createUser(
+  {
+    user: 'appUser'
+    pwd: '5ecurepa55w0rd!'
+    roles: [
+      {
+        role: 'dbOwner',
+        db: 'admin'
+      },
+      {
+        role: 'readWrite',
+        db: 'app'
+      }
+    ]
+  }
+);
 ```
-
 ---
 ### Additional Makefile commands
-**Reset the database (:warning: **Warning!** this deletes all db data)**
-```make reset-mongo-db```
+#### Reset the database (:warning: **Warning!** this deletes all db data)
+```
+make reset-mongo-db
+```
 
-**Remove node modules installed in project folder**
-```make remove-node-modules```
+#### Remove node modules installed in project folder
+```
+make remove-node-modules
+```
 
-**Reset everything** (:warning: **Warning!** this deletes all db data, changes to your repository and node modules)
-```make reset-all```
+#### Reset everything (:warning: **Warning!** this deletes all db data, changes to your repository and node modules)
+```
+make reset-all
+```
