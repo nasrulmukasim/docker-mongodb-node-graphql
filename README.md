@@ -9,7 +9,7 @@ or
 Recommended installation via nvm (macOS/Linux) https://github.com/nvm-sh/nvm
   ```
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-  nvm install --lts`
+  nvm install --lts
   ```
      
 ##### 2. Install Docker https://docs.docker.com/install/
