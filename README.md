@@ -1,6 +1,8 @@
 ## Docker Compose + MongoDB + Node + Apollo + GraphQL
 This is a bootstrap/starter kit for new projects to run on MongoDB, Node.js and GraphQL.
 
+Node.js runs as in `nodemon` so it autoreloads on code changes without requiring you to manually restart the service.
+
 ---
 ### Setup 
 ##### 1. Install Node.js
